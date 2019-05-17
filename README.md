@@ -23,8 +23,18 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+`actions` , `reducers` and the `store` are three parts of the redux thinking system. 
+`actions` is a component that has a packet of information that describes the "action" we want our application to have when our app is run, it will describe the 'type' of action such as `LOG_IN` with other necessary fuctions. The reducers is set up to create our initial state and receive the `action` that have we have created, after receiving the actions, the reducer instructs on how these actions will be carried out, and the `store` is the container that wraps around our app that house our reducers which process the data and action that we fix. The store is our single source of truth because when we connect any of our component to our store, the store will act as one single machine that creates and update our state. This store will rerender all of our disparate components that makes redux so reusable.
+
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+a component state is states that are constructed in a single component, if we have multiple components in our apps, we can give any of the components states as we want. Component states are needed to be passed down as props upstream and downstream but not necessarily horizontally, the application state refers to using one single source for our application state. It is a good time to use component state when we know it's a small app, and doesnt need the extra complications from installing redux. If we know our app will be more complex requiring more components, we should implement application state.
+
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+`redux-thunk` is a type of middleware, a pattern component that interfere between our actions being received by reducers. redux-thunks recognizes any action creators that are "thunk", which is a function of a function that typically is used for instructing async call, it will stop those actions, make the async call and then dispatch the call for our async data.
 
 ## Project Set Up
 
