@@ -12,7 +12,7 @@ class SmurfsList extends Component {
         
     }
 
-    componentDidmount(){
+    componentDidMount(){
         this.props.getSmurfs();
     }
 
